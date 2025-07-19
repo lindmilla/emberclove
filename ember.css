@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Baskervville", serif;
+  font-style: italic;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+/* BACKGROUND IMAGE */
+.background {
+  background-image: url('ember_clove.webp');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* MAIN LAYOUT */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* TEXT BLOCKS */
+.text-block {
+  min-height: 100vh;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity 0.5s ease;
+  text-shadow: none;
+}
+
+/* TEXT INNER */
+.text-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: 6vw;
+  gap: 1rem;
+  text-align: justify;
+  direction: rtl;
+}
+
+/* LOGO */
+.logo {
+  width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* LOGO BLOCK */
+.logo-only {
+  align-items: flex-end;
+  text-align: right;
+  margin-right: 5vw;
+}
+
+/* SCROLL ARROW */
+.scroll-arrow {
+  font-size: 2rem;
+  color: inherit;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards, bounce 2s infinite;
+  animation-delay: 2s, 2s;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  align-self: center;
+}
+
+/* SOCIAL ICONS */
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  align-self: flex-start;
+}
+
+.social-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.spotify-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover .spotify-icon {
+  transform: scale(1.2);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .text-block {
+    justify-content: center;
+    color: white;
+  }
+
+  .text-inner {
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    direction: ltr;
+  }
+
+  .logo {
+    width: 230px;
+    filter: invert(1) brightness(1.2);
+  }
+
+  .logo-only {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .scroll-arrow {
+    align-self: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    align-self: center;
+    font-size: 1.5rem;
+  }
+
+  .spotify-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
+}
+
+@media (min-width: 769px) {
+  .social-links {
+    font-size: 3rem; /* icon size (Font Awesome) */
+    gap: 4.5rem;      /* spacing between icons */
+  }
+
+  .spotify-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
